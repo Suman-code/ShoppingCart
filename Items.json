@@ -6,9 +6,9 @@
 	"filed" : {"titile" : "Chair",
 		 "price" : 14.99,
 
-		 "image" : {"4.jpeg"}
+		 "image" : "4.jpeg"}
 
-}},
+},
 
 {
 
@@ -17,9 +17,9 @@
 	"filed" : {"titile" : "Off white sofs",
 		 "price" : 19.99,
 
-		 "image" : {"5.jpeg"}
+		 "image" : "5.jpeg"}
 
-}},
+},
 
 
 {
@@ -29,9 +29,9 @@
 	"filed" : {"titile" : "Cofee table",
 		 "price" : 9.99,
 
-		 "image" : {"11.jpeg"}
+		 "image" : "11.jpeg"}
 
-}},
+},
 
 {
 
@@ -40,9 +40,9 @@
 	"filed" : {"titile" : "Single couch",
 		 "price" : 13.99,
 
-		 "image" : {"7.jpeg"}
+		 "image" : "7.jpeg"}
 
-}},
+},
 
 
 
@@ -53,9 +53,9 @@
 	"filed" : {"titile" : "Single Bed",
 		 "price" : 16.99,
 
-		 "image" : {"8.jpeg"}
+		 "image" : "8.jpeg"}
 
-}},
+},
 
 
 {
@@ -65,9 +65,9 @@
 	"filed" : {"titile" : "LED",
 		 "price" : 8.99,
 
-		 "image" : {"9.jpeg"}
+		 "image" : "9.jpeg"}
 
-}},
+},
 
 
 {
@@ -77,9 +77,9 @@
 	"filed" : {"titile" : "Dinning table",
 		 "price" : 10.99,
 
-		 "image" : {"9.jpeg"}
+		 "image" : "9.jpeg"}
 
-}},
+},
 
 
 {
@@ -89,9 +89,9 @@
 	"filed" : {"titile" : "Couch set",
 		 "price" : 21.99,
 
-		 "image" : {"bk.jpeg"}
+		 "image" : "bkk.jpeg"}
 
-}},
+},
 
 
 ]}

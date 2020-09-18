@@ -22,7 +22,7 @@ class UI {
 //display produc
 
 	
-			fetch ('shop.json').then ((result) => {
+			fetch ('Items.json').then ((result) => {
 				return result.json();
 			}).then ((data) => {
 				console.log(data);
