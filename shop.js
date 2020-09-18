@@ -10,7 +10,7 @@ const products = document.querySelector(".products");
 const productsCenter = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
 
-const productsCenter = document.querySelector(".products-center");
+
 
 
 let cart = [];
