@@ -12,7 +12,6 @@ const cartContent = document.querySelector(".cart-cotent");
 
 
 
-
 let cart = [];
 
 
