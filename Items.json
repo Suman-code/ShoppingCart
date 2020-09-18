@@ -1,7 +1,6 @@
-{"items" : [{
-
-
-	"sys" : {"id" : "1"},
+{"items" : [
+	{
+		"sys" : {"id" : "1"},
 
 	"filed" : {"titile" : "Chair",
 		 "price" : 14.99,
@@ -10,16 +9,14 @@
 
 },
 
-{
-
-	"sys" : {"id" : "2"},
+{ "sys" : {"id" : "2"},
 
 	"filed" : {"titile" : "Off white sofs",
 		 "price" : 19.99,
 
 		 "image" : "5.jpeg"}
 
-},
+		},
 
 
 {
