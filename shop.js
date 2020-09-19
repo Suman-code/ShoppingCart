@@ -15,15 +15,25 @@ const cartContent = document.querySelector(".cart-cotent");
 let cart = [];
 
 
-class UI {
-	
-}
 
-//display produc
 
-	
+//Get Products from Json
+class Products(){
+
+	getProducts(){
 			fetch ('Items.json').then ((result) => {
-				return result.json();
+				let data = result.json();
+				let products = data.items;
+				const products = products.map(item => {
+					const {title, price, image} = item.filed;
+					const {id} = item.sys;
+
+					return {title, price, image,id}
+
+				})
+				return products
+
+
 			}).then ( (data) => {
 				console.log(data);
 
@@ -32,4 +42,42 @@ class UI {
 				console.log(error);
 
 			}); 
-		
+
+		}}
+//Display Products
+class UI{
+
+	displayProducts (products) {
+		let result = '';
+
+
+
+
+	}
+
+
+}
+
+
+//local storage
+class storage{
+
+
+}
+
+
+
+		document.addEventListener("DOMContentOnloaded" , () => {
+
+			const ui = new UI();
+			const products = new Products();
+
+			products.getProducts().then( (products => ui.displayProducts(products));
+
+
+
+
+
+
+
+		});
