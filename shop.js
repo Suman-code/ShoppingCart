@@ -25,14 +25,16 @@ class Products {
 			fetch ('Items.json').then ((result) => {
 				let data = result.json();
 				let products = data.items;
-				const products = products.map(item => {
+				products = products.map(item => {
 					const {title, price, image} = item.filed;
-					const {id} = item.sys;
+					const id = item.sys
 
 					return {title, price, image,id}
 
 				})
-				return products
+
+				return products 
+
 
 
 			}).then ( (data) => {
