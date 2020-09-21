@@ -18,7 +18,8 @@ let cart = [];
 
 
 //Get Products from Json
-class Products(){
+
+class Products {
 
 	getProducts(){
 			fetch ('Items.json').then ((result) => {
@@ -44,6 +45,8 @@ class Products(){
 			}); 
 
 		}}
+
+		
 //Display Products
 class UI{
 
@@ -60,10 +63,7 @@ class UI{
 
 
 //local storage
-class storage{
-
-
-}
+class storage{}
 
 
 
