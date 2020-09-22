@@ -7,7 +7,7 @@ const cartOverlay = document.querySelector(".cart-overlay");
 const clearCart = document.querySelector(".clear-cart");
 const clearTotal = document.querySelector(".cart-total");
 const products = document.querySelector(".products");
-const productsCenter = document.querySelector(".products-center");
+const productsDOM = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
 
 
@@ -33,7 +33,7 @@ class Products {
 
 				})
 
-				return products 
+				return products;
 
 
 
@@ -46,27 +46,16 @@ class Products {
 
 			}); 
 
-		}}
+		}
+	}
 
 		
 //Display Products
-class UI{
 
-	displayProducts (products) {
-		let result = '';
-
-
-
-
-	}
-
-
-}
 
 
 //local storage
 class storage{}
-
 
 
 		document.addEventListener("DOMContentOnloaded" , () => {
@@ -74,7 +63,7 @@ class storage{}
 			const ui = new UI();
 			const products = new Products();
 
-			products.getProducts().then( data => console.log(data));
+			products.getProducts().then ( data => console.log (data));
 
 
 
