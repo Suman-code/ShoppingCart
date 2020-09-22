@@ -27,7 +27,7 @@ class Products {
 				let products = data.items;
 				products = products.map(item => {
 					const {title, price, image} = item.filed;
-					const id = item.sys
+					const {id} = item.sys
 
 					return {title, price, image,id}
 
@@ -74,7 +74,7 @@ class storage{}
 			const ui = new UI();
 			const products = new Products();
 
-			products.getProducts().then( products => ui.displayProducts(products));
+			products.getProducts().then( data => console.log(data));
 
 
 
