@@ -74,7 +74,7 @@ class storage{}
 			const ui = new UI();
 			const products = new Products();
 
-			products.getProducts().then( (products => ui.displayProducts(products));
+			products.getProducts().then( products => ui.displayProducts(products));
 
 
 
