@@ -26,22 +26,20 @@ class Products {
 				let data = result.json();
 				let products = data.items;
 				products = products.map(item => {
-					const {title, price, image} = item.filed;
-					const {id} = item.sys
+				const {title, price, image} = item.filed;
+			    const {id} = item.sys
 
-					return {title, price, image,id}
+				return {title, price, image,id}
 
 				})
 
 				return products;
-
-
-
-			}).then ( (data) => {
+				
+                }).then ( (data) => {
 				console.log(data);
 
 			}) 
-			.catch ( (error) => {
+			    .catch ( (error) => {
 				console.log(error);
 
 			}); 
@@ -50,9 +48,6 @@ class Products {
 	}
 
 		
-//Display Products
-
-
 
 //local storage
 class storage{}
@@ -60,15 +55,9 @@ class storage{}
 
 		document.addEventListener("DOMContentOnloaded" , () => {
 
-			const ui = new UI();
-			const products = new Products();
+		const products = new Products();
 
-			products.getProducts().then ( data => console.log (data));
-
-
-
-
-
+		products.getProducts().then (products => console.log (products));
 
 
 		});
