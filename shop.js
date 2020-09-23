@@ -22,42 +22,41 @@ let cart = [];
 class Products {
 
 	getProducts(){
-			fetch ('Items.json').then ((result) => {
-				let data = result.json();
-				let products = data.items;
-				products = products.map(item => {
-				const {title, price, image} = item.filed;
-			    const {id} = item.sys
-
-				return {title, price, image,id}
-
+			const data = fetch ('Items.json').then ((result) => {
+				return result.json(); 
+				
+			}).then ((data) => {
+				let products = data.items
+				 products.map(item => {
+					const {title, price, image} = item.field;
+					const {id} = item.sys;
+					return {titil, price, image, id};
 				})
 
-				return products;
-				
-                }).then ( (data) => {
-				console.log(data);
+				return products
 
-			}) 
-			    .catch ( (error) => {
+			}).catch ((error)=> {
+
 				console.log(error);
 
-			}); 
+			})
 
+			return data
+		
 		}
 	}
 
 		
 
 //local storage
-class storage{}
+class Storage{}
 
 
 		document.addEventListener("DOMContentOnloaded" , () => {
 
 		const products = new Products();
 
-		products.getProducts().then (products => console.log (products));
+		products.getProducts().then(result => console.log(result));
 
 
 		});

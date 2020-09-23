@@ -2,7 +2,7 @@
 	{
 		"sys" : {"id" : "1"},
 
-	"filed" : {"titile" : "Chair",
+	"field" : {"title" : "Chair",
 		 "price" : 14.99,
 
 		 "image" : "4.jpeg"}
@@ -11,7 +11,7 @@
 
 { "sys" : {"id" : "2"},
 
-	"filed" : {"titile" : "Off white sofs",
+	"field" : {"title" : "Off white sofs",
 		 "price" : 19.99,
 
 		 "image" : "5.jpeg"}
@@ -23,7 +23,7 @@
 
 	"sys" : {"id" : "3"},
 
-	"filed" : {"titile" : "Cofee table",
+	"field" : {"title" : "Cofee table",
 		 "price" : 9.99,
 
 		 "image" : "11.jpeg"}
@@ -34,7 +34,7 @@
 
 	"sys" : {"id" : "4"},
 
-	"filed" : {"titile" : "Single couch",
+	"field" : {"title" : "Single couch",
 		 "price" : 13.99,
 
 		 "image" : "7.jpeg"}
@@ -47,7 +47,7 @@
 
 	"sys" : {"id" : "5"},
 
-	"filed" : {"titile" : "Single Bed",
+	"field" : {"title" : "Single Bed",
 		 "price" : 16.99,
 
 		 "image" : "8.jpeg"}
@@ -59,7 +59,7 @@
 
 	"sys" : {"id" : "6"},
 
-	"filed" : {"titile" : "LED",
+	"field" : {"title" : "LED",
 		 "price" : 8.99,
 
 		 "image" : "9.jpeg"}
@@ -71,7 +71,7 @@
 
 	"sys" : {"id" : "7"},
 
-	"filed" : {"titile" : "Dinning table",
+	"field" : {"title" : "Dinning table",
 		 "price" : 10.99,
 
 		 "image" : "9.jpeg"}
@@ -83,7 +83,7 @@
 
 	"sys" : {"id" : "8"},
 
-	"filed" : {"titile" : "Couch set",
+	"field" : {"title" : "Couch set",
 		 "price" : 21.99,
 
 		 "image" : "bkk.jpeg"
