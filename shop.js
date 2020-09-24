@@ -58,7 +58,7 @@ class Storage{}
 
 		const products = new Products();
 
-		products.getProducts().then (result =>
+	products.getProducts().then (result =>
 			console.log(result));
 
 
