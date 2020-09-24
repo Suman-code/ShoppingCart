@@ -49,14 +49,17 @@ class Products {
 		
 
 //local storage
+
+debugger;
 class Storage{}
 
 
-		document.addEventListener("DOMContentOnloaded" , () => {
+		document.addEventListener("DOMContentLoaded" , () => {
 
 		const products = new Products();
 
-		products.getProducts().then(result => console.log(result));
+		products.getProducts().then (result =>
+			console.log(result));
 
 
 		});
