@@ -18,7 +18,7 @@ let cart = [];
 
 
 //Get Products from Json
-
+debugger;
 class Products {
 
 	getProducts(){
