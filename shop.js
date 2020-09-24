@@ -30,7 +30,7 @@ class Products {
 				 products.map(item => {
 					const {title, price, image} = item.field;
 					const {id} = item.sys;
-					return {titil, price, image, id};
+					return {title, price, image, id};
 				})
 
 				return products
