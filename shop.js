@@ -18,6 +18,7 @@ let cart = [];
 
 
 //Get Products from Json
+
 debugger;
 class Products {
 
@@ -48,18 +49,56 @@ class Products {
 
 		
 
+//Class for display products
+
+class UI {}
+
+/*playProducts(products){
+          
+        let output = '';
+
+		products.forEach(product =>{ 
+
+		output += `
+		<article class="product">
+				<div class="img-container">
+					
+					<img src=${product.image} alt= "product" class="product-img">
+					<button class="bag-btn" data-id=${product.id}>
+						<i class="fas fa-shopping-cart"></i>add to bag
+					</button>
+				</div>
+				<h3>${product.title}</h3>
+				<h4>$${product.price}</h4>
+
+			</article> `;
+
+		});
+
+		productsDOM.innerHTML = output;
+
+	
+
+	}
+
+}
+
+
+
 //local storage
 
-debugger;
-class Storage{}
+
+class Storage{} */
 
 
 		document.addEventListener("DOMContentLoaded" , () => {
 
-		const products = new Products();
+		const goods = new Products();
 
-	products.getProducts().then (result =>
-			console.log(result));
+		const ui = new UI();
+
+	    goods.getProducts().then (products=>
+			console.log(products));
 
 
-		});
+		})
