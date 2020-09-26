@@ -51,9 +51,9 @@ class Products {
 
 //Class for display products
 
-class UI {}
+class UI {
 
-/*playProducts(products){
+diplayProducts(products){
           
         let output = '';
 
@@ -74,11 +74,11 @@ class UI {}
 			</article> `;
 
 		});
+		debugger;
 
 		productsDOM.innerHTML = output;
 
 	
-
 	}
 
 }
@@ -88,7 +88,7 @@ class UI {}
 //local storage
 
 
-class Storage{} */
+class Storage{} 
 
 
 		document.addEventListener("DOMContentLoaded" , () => {
@@ -98,7 +98,7 @@ class Storage{} */
 		const ui = new UI();
 
 	    goods.getProducts().then (products=>
-			console.log(products));
+			ui.diplayProducts(products));
 
 
 		})
