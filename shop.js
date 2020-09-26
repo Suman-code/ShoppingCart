@@ -19,7 +19,7 @@ let cart = [];
 
 //Get Products from Json
 
-debugger;
+
 class Products {
 
 	getProducts(){
@@ -74,7 +74,7 @@ diplayProducts(products){
 			</article> `;
 
 		});
-		debugger;
+	
 
 		productsDOM.innerHTML = output;
 
