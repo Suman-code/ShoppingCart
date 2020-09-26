@@ -54,7 +54,7 @@ class Products {
 debugger;
 class UI {
 
-displayProducts(products){
+displayProducts(products) {
 	
           
         let output = '';
@@ -95,7 +95,7 @@ class Storage{}
 
 
 //DOM 
-debugger;
+
 		document.addEventListener("DOMContentLoaded" , () => {
 
 		const goods = new Products();
