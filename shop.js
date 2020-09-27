@@ -62,18 +62,19 @@ displayProducts(products) {
 		products.forEach(product =>{ 
 
 		output += `
+	
 		<article class="product">
 				<div class="img-container">
-					
-					<img src=${product.field.image} alt= "product" class="product-img">
+				<img src=${product.field.image} class="product-img">
 					<button class="bag-btn" data-id=${product.sys.id}>
-						<i class="fas fa-shopping-cart"></i>add to bag
+						<i class="fa fa-shopping-cart"></i>add to bag
 					</button>
 				</div>
 				<h3>${product.field.title}</h3>
 				<h4>$${product.field.price}</h4>
 
-			</article> `;
+			</article> 
+			`;
 
 
 
@@ -91,7 +92,20 @@ displayProducts(products) {
 
 //local storage
 
-class Storage{} 
+class Storage{
+
+	static saveProducts(products){
+
+		localStorage.setItem("products" , JSON.stringify(products));
+
+
+
+
+	}
+
+
+
+} 
 
 
 //DOM 
@@ -103,6 +117,12 @@ class Storage{}
 		const ui = new UI();
 
 
-	    goods.getProducts().then (products => ui.displayProducts(products));
+	    goods.getProducts().then (products => {
+
+	    	ui.displayProducts(products);
+	    	Storage.saveProducts(products);
+
+
+	    });
 
 });
