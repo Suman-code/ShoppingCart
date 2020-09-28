@@ -10,6 +10,7 @@ const products = document.querySelector(".products");
 const productsDOM = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
 
+const buts = document.querySelectorAll(".bag-btn");
 
 
 let cart = [];
@@ -52,6 +53,7 @@ class Products {
 //Class for display products
 
 debugger;
+
 class UI {
 
 displayProducts(products) {
@@ -86,6 +88,10 @@ displayProducts(products) {
 	
 	}
 
+
+
+
+
 }
 
 
@@ -98,12 +104,7 @@ class Storage{
 
 		localStorage.setItem("products" , JSON.stringify(products));
 
-
-
-
-	}
-
-
+  }
 
 } 
 
