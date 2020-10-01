@@ -10,7 +10,6 @@ const products = document.querySelector(".products");
 const productsDOM = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
 
-const buts = document.querySelectorAll(".bag-btn");
 
 
 let cart = [];
@@ -75,12 +74,8 @@ displayProducts(products) {
 				<h3>${product.field.title}</h3>
 				<h4>$${product.field.price}</h4>
 
-			</article> 
-			`;
-
-
-
-		});
+			</article> `;
+});
 	
 	productsDOM.innerHTML = output;
 
@@ -89,7 +84,36 @@ displayProducts(products) {
 	}
 
 
+getBagButton(){
 
+	let buttons = [...document.querySelectorAll(".bag-btn")];
+	buttons.forEach(button => {
+		let id =  button.dataset.id;
+
+		let  inCart = cart.find(item => item.id ===id){
+
+			if (inCart){
+
+				button.innerText = "In Cart";
+				buttons.disabled = true;
+
+			}
+
+
+
+
+		}
+
+
+
+
+
+});
+
+
+
+
+}
 
 
 }
@@ -124,6 +148,9 @@ class Storage{
 	    	Storage.saveProducts(products);
 
 
+	    }).then(() => {
+
+	    	ui,getBagButton();
 	    });
 
 });
