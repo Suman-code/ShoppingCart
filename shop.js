@@ -14,6 +14,8 @@ const cartContent = document.querySelector(".cart-cotent");
 
 let cart = [];
 
+let buttonsDOM = [];
+
 
 
 
@@ -80,35 +82,39 @@ displayProducts(products) {
 	productsDOM.innerHTML = output;
 
 
-	
 	}
 
 
 getBagButton(){
-
+debugger;
 	let buttons = [...document.querySelectorAll(".bag-btn")];
+
+	buttonsDOM = buttons;
+
+
 	buttons.forEach(button => {
-		let id =  button.dataset.id;
+		let id =  button.dataset.id
 
-		let  inCart = cart.find(item => item.id ===id){
+		let  inCart = cart.find(item => item.id ===id);
 
-			if (inCart){
+		 if (inCart){
 
 				button.innerText = "In Cart";
 				buttons.disabled = true;
 
-			}
+			} button.addEventListener("click" , (event) => {
 
+				event.target.innerText = "In Cart";
+				event.target.disabled = true; 
 
+				let cartItem = Storage.getCartProducts(id);
+				console.log(cartItem);
+			
 
+			});
 
-		}
-
-
-
-
-
-});
+			
+			});
 
 
 
@@ -121,19 +127,27 @@ getBagButton(){
 
 
 //local storage
-
+debugger;
 class Storage{
-
 	static saveProducts(products){
 
 		localStorage.setItem("products" , JSON.stringify(products));
 
   }
 
+  static getCartProducts(id){
+
+  	let producs = JSON.parse(localStorage.getItem ("products"));
+
+  	return producs.find(produc => produc.id === id);
+
+
+  }
+
 } 
 
 
-//DOM 
+//DOM function
 
 		document.addEventListener("DOMContentLoaded" , () => {
 
@@ -150,7 +164,7 @@ class Storage{
 
 	    }).then(() => {
 
-	    	ui,getBagButton();
+	    	ui.getBagButton();
 	    });
 
 });
