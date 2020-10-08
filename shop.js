@@ -86,16 +86,16 @@ displayProducts(products) {
 
 
 getBagButton(){
-debugger;
+
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-	buttonsDOM = buttons;
+	       buttonsDOM = buttons;
 
+          buttons.forEach(button => {
+		  let id =  button.dataset.id
+		  debugger;
 
-	buttons.forEach(button => {
-		let id =  button.dataset.id
-
-		let  inCart = cart.find(item => item.id === id);
+		  let  inCart = cart.find(item => item.id === id);
 
 		 if (inCart){
 
@@ -107,8 +107,14 @@ debugger;
 				event.target.innerText = "In Cart";
 				event.target.disabled = true; 
 
-				let cartItem = Storage.getCartProducts(id);
-				console.log(cartItem);
+				//Getting products from "products"
+				debugger;
+
+				let cartItem = {...Storage.getCartProducts(id), Amout : 1};
+				//Save to thecart
+				cart = [...cart, cartItem];
+				console.log(cart);
+
 			
 
 			});
