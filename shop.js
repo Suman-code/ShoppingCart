@@ -87,14 +87,12 @@ getBagButton(){
 
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-	           buttonsDOM = buttons;
-
-
 	           cart = JSON.parse(localStorage.getItem ("products"));    
+
+	           buttonsDOM = buttons;
 
                buttons.forEach(button => {
 		       let id =  button.dataset.id
-
 
 		       let  inCart = cart.find(item => item.sys.id === id);
 
@@ -115,13 +113,15 @@ getBagButton(){
 				
 				cart  = [...cart , cartItem];
 				
-
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
 
-				//Display cart
+
+				//Display cart Item
+
+				// Show the cart
 
 
 				
