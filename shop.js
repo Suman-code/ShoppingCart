@@ -53,8 +53,6 @@ class Products {
 
 //Class for display products
 
-debugger;
-
 class UI {
 
 displayProducts(products) {
@@ -62,7 +60,7 @@ displayProducts(products) {
           
         let output = '';
 
-		products.forEach(product =>{ 
+		products.forEach(product => { 
 
 		output += `
 	
@@ -89,43 +87,50 @@ getBagButton(){
 
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-	       buttonsDOM = buttons;
+	           buttonsDOM = buttons;
 
-          buttons.forEach(button => {
-		  let id =  button.dataset.id
-		  debugger;
 
-		  let  inCart = cart.find(item => item.id === id);
+	           cart = JSON.parse(localStorage.getItem ("products"));    
 
-		 if (inCart){
+               buttons.forEach(button => {
+		       let id =  button.dataset.id
+
+
+		       let  inCart = cart.find(item => item.sys.id === id);
+
+		       if (inCart){
 
 				button.innerText = "In Cart";
 				buttons.disabled = true;
 
-			} button.addEventListener("click" , (event) => {
+			
 
-				event.target.innerText = "In Cart";
-				event.target.disabled = true; 
+			  } button.addEventListener("click" , (event) => {
 
+				/*event.target.innerText = "In Cart"
+				event.target.disabled = true*/
 				//Getting products from "products"
-				debugger;
-
 				let cartItem = {...Storage.getCartProducts(id), Amout : 1};
-				//Save to thecart
-				cart = [...cart, cartItem];
-				console.log(cart);
+				//Save to the cart
+				
+				cart  = [...cart , cartItem];
+				
+
+				//Save cart to local storage
+				Storage.saveCart(cart);
+
+				//set up the value
+
+				//Display cart
+
+
+				
+			     
+			     });
 
 			
-
 			});
-
-			
-			});
-
-
-
-
-}
+         }
 
 
 }
@@ -133,9 +138,8 @@ getBagButton(){
 
 
 //local storage
-debugger;
-class Storage{
-	static saveProducts(products){
+class Storage {
+	static saveProducts(products) {
 
 		localStorage.setItem("products" , JSON.stringify(products));
 
@@ -145,8 +149,14 @@ class Storage{
 
   	let producs = JSON.parse(localStorage.getItem ("products"));
 
-  	return producs.find(produc => produc.id === id);
+  	return producs.find(produc => produc.sys.id === id);
 
+
+  }
+
+  static saveCart(cart){
+
+  	localStorage.setItem("cart" , JSON.stringify(cart));
 
   }
 
