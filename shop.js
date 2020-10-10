@@ -5,7 +5,7 @@ const removeItem = document.querySelector(".remove-item");
 const cartDOM = document.querySelector(".cart");
 const cartOverlay = document.querySelector(".cart-overlay");
 const clearCart = document.querySelector(".clear-cart");
-const clearTotal = document.querySelector(".cart-total");
+const cartTotal = document.querySelector(".cart-total");
 const products = document.querySelector(".products");
 const productsDOM = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
@@ -98,25 +98,22 @@ getBagButton(){
 
 		       if (inCart){
 
-				button.innerText = "In Cart";
-				buttons.disabled = true;
-
-			
 
 			  } button.addEventListener("click" , (event) => {
 
-				/*event.target.innerText = "In Cart"
-				event.target.disabled = true*/
+				event.target.innerText = "In Cart"
+				event.target.disabled = true
 				//Getting products from "products"
-				let cartItem = {...Storage.getCartProducts(id), Amout : 1};
+				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
 				//Save to the cart
 				
-				cart  = [...cart , cartItem];
+				cart  = cartItem;
 				
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
+				this.setValues(cart);
 
 
 				//Display cart Item
@@ -130,6 +127,32 @@ getBagButton(){
 
 			
 			});
+         }
+         setValues(cart){
+         	debugger;
+
+         	let cartItemTotal = 0;
+         	let itemTotal = 0;
+         	debugger;
+         	cart.map(item => {
+         		cartItemTotal += item.field.price * item.quantity;
+         		itemTotal += item.quantity; 
+
+         	})
+
+         	cartTotal.innerText = parse.Float(cartItemTotal.toFixed(2))
+         	cartItem,innerText = itemTotal
+         	debugger;
+         	console.log(cartTotal , itemTotal)
+
+
+
+
+
+
+
+
+
          }
 
 
