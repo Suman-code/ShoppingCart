@@ -88,16 +88,32 @@ getBagButton(){
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
 	           buttonsDOM = buttons;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
 
+	           cart = JSON.parse(localStorage.getItem ("products"));    
+
+<<<<<<< HEAD
 	           cart = JSON.parse(localStorage.getItem ("products"));    
 
                buttons.forEach(button => {
 		       let id =  button.dataset.id;
 
+=======
+               buttons.forEach(button => {
+		       let id =  button.dataset.id
+
 
 		       let  inCart = cart.find(item => item.sys.id === id);
 
+		       if (inCart){
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
+
+		       let  inCart = cart.find(item => item.sys.id === id);
+
+<<<<<<< HEAD
 		       if (inCart){
 			
 
@@ -142,11 +158,41 @@ getBagButton(){
             	     })
 
 
+=======
+			
+
+			  } button.addEventListener("click" , (event) => {
+
+				/*event.target.innerText = "In Cart"
+				event.target.disabled = true*/
+				//Getting products from "products"
+				let cartItem = {...Storage.getCartProducts(id), Amout : 1};
+				//Save to the cart
+				
+				cart  = [...cart , cartItem];
+				
+
+				//Save cart to local storage
+				Storage.saveCart(cart);
+
+				//set up the value
+
+				//Display cart
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
 
 
+				
+			     
+			     });
 
+<<<<<<< HEAD
 
                 }
+=======
+			
+			});
+         }
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
 
 
 }
