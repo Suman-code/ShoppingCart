@@ -5,7 +5,7 @@ const removeItem = document.querySelector(".remove-item");
 const cartDOM = document.querySelector(".cart");
 const cartOverlay = document.querySelector(".cart-overlay");
 const clearCart = document.querySelector(".clear-cart");
-const clearTotal = document.querySelector(".cart-total");
+const cartTotal = document.querySelector(".cart-total");
 const products = document.querySelector(".products");
 const productsDOM = document.querySelector(".products-center");
 const cartContent = document.querySelector(".cart-cotent");
@@ -14,6 +14,7 @@ const cartContent = document.querySelector(".cart-cotent");
 
 
 let cart = [];
+
 let buttonsDOM = [];
 
 
@@ -53,8 +54,6 @@ class Products {
 
 //Class for display products
 
-debugger;
-
 class UI {
 
 displayProducts(products) {
@@ -62,7 +61,7 @@ displayProducts(products) {
           
         let output = '';
 
-		products.forEach(product =>{ 
+		products.forEach(product => { 
 
 		output += `
 	
@@ -75,7 +74,6 @@ displayProducts(products) {
 				</div>
 				<h3>${product.field.title}</h3>
 				<h4>$${product.field.price}</h4>
-
 			</article> `;
 });
 	
@@ -86,43 +84,69 @@ displayProducts(products) {
 
 
 getBagButton(){
-debugger;
+
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-	      buttonsDOM = buttons;
+	           buttonsDOM = buttons;
 
-	       buttons.forEach(button => {
-		   let id =  button.dataset.id;
-		   let  inCart = cart.find(item => item.id === id);
-    	   if (inCart){
 
-		    button.innerText = "In Cart";
-			buttons.disabled = true;
+	           cart = JSON.parse(localStorage.getItem ("products"));    
 
-			}button.addEventListener("click" , (event) => {
+               buttons.forEach(button => {
+		       let id =  button.dataset.id;
 
-			event.target.innerText = "In Cart";
-			event.target.disabled = true; 
 
-			//Get cart products from products
-			debugger;
+		       let  inCart = cart.find(item => item.sys.id === id);
 
-			let cartItem = Storage.getCartProducts(id);
-			console.log()
-				
-			//add products to cart
-			//save cart products in local storage
-			// Set cart values
-			//Display cart items
-			// Set/ show cart
-
-			});
-
+		       if (inCart){
 			
+
+			  } button.addEventListener("click" , (event) => {
+
+				event.target.innerText = "In Cart";
+				event.target.disabled = true
+
+				//Getting products from "products"
+
+				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
+				//Save to the cart
+				
+				cart  = cartItem;
+
+				//Save cart to local storage
+				Storage.saveCart(cart);
+
+				//set up the value
+				debugger;
+				cartValues(cart);
+
+
+				//Display cart
+
+			     });
+	
 			});
 
+         }  
+                cartValues(cart){
+                	let temTotal = 0;
+                	let cartTotal = 0;
+                	debugger;
 
-}
+                	cart.map(item => {
+                		temTotal += item.field.price * item.quantity;
+                		cartTotal += item.quantity;
+                		debugger;
+
+                		console.log(temTotal , cartTotal)
+            	     })
+
+
+
+
+
+
+                }
 
 
 }
@@ -130,20 +154,27 @@ debugger;
 
 
 //local storage
-debugger;
+class Storage {
+	static saveProducts(products) {
 
-class Storage{
-	static saveProducts(products){
+		localStorage.setItem("products" , JSON.stringify(products));
 
-		localStorage.setItem("products" , JSON.stringify(products)); }
+  }
 
-//getting crat products from real product
   static getCartProducts(id){
 
   	let producs = JSON.parse(localStorage.getItem ("products"));
 
-  	return producs.find(produc => produc.id === id);
-}
+  	return producs.find(produc => produc.sys.id === id);
+
+
+  }
+
+  static saveCart(cart){
+
+  	localStorage.setItem("cart" , JSON.stringify(cart));
+
+  }
 
 } 
 
@@ -160,6 +191,7 @@ class Storage{
 	    goods.getProducts().then (products => {
 
 	    	ui.displayProducts(products);
+
 	    	Storage.saveProducts(products);
 
 
