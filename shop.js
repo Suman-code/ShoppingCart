@@ -87,41 +87,16 @@ getBagButton(){
 
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-<<<<<<< HEAD
 	           cart = JSON.parse(localStorage.getItem ("products"));    
 
-	           buttonsDOM = buttons;
+	           buttonsDOM = buttons;    
 
-=======
-	           buttonsDOM = buttons;
-<<<<<<< HEAD
-=======
-
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
-
-	           cart = JSON.parse(localStorage.getItem ("products"));    
-
-<<<<<<< HEAD
-	           cart = JSON.parse(localStorage.getItem ("products"));    
-
-               buttons.forEach(button => {
+	           buttons.forEach(button => {
 		       let id =  button.dataset.id;
 
-=======
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-               buttons.forEach(button => {
-		       let id =  button.dataset.id
-
 		       let  inCart = cart.find(item => item.sys.id === id);
 
 		       if (inCart){
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
-
-		       let  inCart = cart.find(item => item.sys.id === id);
-
-<<<<<<< HEAD
-		       if (inCart){
-			
 
 			  } button.addEventListener("click" , (event) => {
 
@@ -133,83 +108,32 @@ getBagButton(){
 				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
 				//Save to the cart
 				
-				cart  = cartItem;
+				cart  = [...cart ,cartItem];
 
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
-				debugger;
-				cartValues(cart);
+				
+				this.cartValues(cart);
 
 
 				//Display cart
 
-<<<<<<< HEAD
-=======
+
+				// Show cart
+
+
+
+
 			     });
 	
 			});
 
          }  
-                cartValues(cart){
-                	let temTotal = 0;
-                	let cartTotal = 0;
-                	debugger;
+            
 
-                	cart.map(item => {
-                		temTotal += item.field.price * item.quantity;
-                		cartTotal += item.quantity;
-                		debugger;
-
-                		console.log(temTotal , cartTotal)
-            	     })
-
-
-=======
-			
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-
-			  } button.addEventListener("click" , (event) => {
-
-				event.target.innerText = "In Cart"
-				event.target.disabled = true
-				//Getting products from "products"
-				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
-				//Save to the cart
-				
-				cart  = cartItem;
-				
-				//Save cart to local storage
-				Storage.saveCart(cart);
-
-				//set up the value
-				this.setValues(cart);
-
-<<<<<<< HEAD
-
-				//Display cart Item
-
-				// Show the cart
-=======
-				//Display cart
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-
-
-				
-			     
-			     });
-
-<<<<<<< HEAD
-
-                }
-=======
-			
-			});
-         }
-<<<<<<< HEAD
-         setValues(cart){
+         cartValues(cart){
          	debugger;
 
          	let cartItemTotal = 0;
@@ -221,23 +145,20 @@ getBagButton(){
 
          	})
 
-         	cartTotal.innerText = parse.Float(cartItemTotal.toFixed(2))
-         	cartItem,innerText = itemTotal
+         	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2))
+         	cartItems.innerText = itemTotal
          	debugger;
          	console.log(cartTotal , itemTotal)
 
 
 
 
+}
 
 
 
 
-
-         }
-=======
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+        
 
 
 }
