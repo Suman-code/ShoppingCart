@@ -91,12 +91,36 @@ getBagButton(){
 
 	           buttonsDOM = buttons;    
 
+<<<<<<< HEAD
 	           buttons.forEach(button => {
 		       let id =  button.dataset.id;
 
 		       let  inCart = cart.find(item => item.sys.id === id);
 
 		       if (inCart){
+=======
+=======
+	           buttonsDOM = buttons;
+
+
+	           cart = JSON.parse(localStorage.getItem ("products"));    
+
+               buttons.forEach(button => {
+		       let id =  button.dataset.id;
+
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+               buttons.forEach(button => {
+		       let id =  button.dataset.id
+>>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
+
+		       let  inCart = cart.find(item => item.sys.id === id);
+
+		       if (inCart){
+			
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 			  } button.addEventListener("click" , (event) => {
 
@@ -108,18 +132,59 @@ getBagButton(){
 				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
 				//Save to the cart
 				
+<<<<<<< HEAD
 				cart  = [...cart ,cartItem];
+=======
+				cart  = [...cart , cartItem];
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
+<<<<<<< HEAD
 				
+=======
+				debugger;
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 				this.cartValues(cart);
 
 
 				//Display cart
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+			     });
+	
+			});
+
+         }  
+                cartValues(cart){
+                	let  cartItemTotal= 0;
+                	let itemTotal = 0;
+                	debugger;
+
+                	cart.map(item => {
+                		cartItemTotal += item.field.price * item.quantity;
+                		itemTotal += item.quantity;
+                	})
+
+                	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
+                	cartItems.innerText = itemTotal;
+                	console.log(cartTotal ,  cartItems)
+                	
+                
+
+
+<<<<<<< HEAD
+                }
+=======
+=======
+			
+>>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 				// Show cart
 
@@ -158,7 +223,16 @@ getBagButton(){
 
 
 
+<<<<<<< HEAD
         
+=======
+
+         }
+=======
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
+>>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+>>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 
 }
