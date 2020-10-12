@@ -87,27 +87,15 @@ getBagButton(){
 
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
-<<<<<<< HEAD
-	           cart = JSON.parse(localStorage.getItem ("products"));    
-
-	           buttonsDOM = buttons;
-
-=======
 	           buttonsDOM = buttons;
 
 
-	           cart = JSON.parse(localStorage.getItem ("products"));    
+	           //cart = JSON.parse(localStorage.getItem ("products"));    
 
                buttons.forEach(button => {
 		       let id =  button.dataset.id;
+		      
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-               buttons.forEach(button => {
-		       let id =  button.dataset.id
->>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
 
 		       let  inCart = cart.find(item => item.sys.id === id);
 
@@ -130,14 +118,15 @@ getBagButton(){
 				Storage.saveCart(cart);
 
 				//set up the value
-				debugger;
+				
+
 				this.cartValues(cart);
 
 
 				//Display cart
 
-<<<<<<< HEAD
-=======
+				//show cart
+
 			     });
 	
 			});
@@ -146,7 +135,7 @@ getBagButton(){
                 cartValues(cart){
                 	let  cartItemTotal= 0;
                 	let itemTotal = 0;
-                	debugger;
+                	
 
                 	cart.map(item => {
                 		cartItemTotal += item.field.price * item.quantity;
@@ -155,91 +144,12 @@ getBagButton(){
 
                 	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
                 	cartItems.innerText = itemTotal;
-                	console.log(cartTotal ,  cartItems)
+                
                 	
                 
+          }
 
-
-<<<<<<< HEAD
-                }
-=======
-=======
-			
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-
-			  } button.addEventListener("click" , (event) => {
-
-				event.target.innerText = "In Cart"
-				event.target.disabled = true
-				//Getting products from "products"
-				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
-				//Save to the cart
-				
-				cart  = cartItem;
-				
-				//Save cart to local storage
-				Storage.saveCart(cart);
-
-				//set up the value
-				this.setValues(cart);
-
-<<<<<<< HEAD
-
-				//Display cart Item
-
-				// Show the cart
-=======
-				//Display cart
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
-
-
-				
-			     
-			     });
-
-<<<<<<< HEAD
-
-                }
-=======
-			
-			});
-         }
-<<<<<<< HEAD
-         setValues(cart){
-         	debugger;
-
-         	let cartItemTotal = 0;
-         	let itemTotal = 0;
-         	debugger;
-         	cart.map(item => {
-         		cartItemTotal += item.field.price * item.quantity;
-         		itemTotal += item.quantity; 
-
-         	})
-
-         	cartTotal.innerText = parse.Float(cartItemTotal.toFixed(2))
-         	cartItem,innerText = itemTotal
-         	debugger;
-         	console.log(cartTotal , itemTotal)
-
-
-
-
-
-
-
-
-
-         }
-=======
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
->>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
-
-
-}
-
+  }
 
 
 //local storage
