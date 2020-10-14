@@ -87,6 +87,22 @@ getBagButton(){
 
 	let buttons = [...document.querySelectorAll(".bag-btn")];
 
+<<<<<<< HEAD
+=======
+	           cart = JSON.parse(localStorage.getItem ("products"));    
+
+	           buttonsDOM = buttons;    
+
+<<<<<<< HEAD
+	           buttons.forEach(button => {
+		       let id =  button.dataset.id;
+
+		       let  inCart = cart.find(item => item.sys.id === id);
+
+		       if (inCart){
+=======
+=======
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 	           buttonsDOM = buttons;
 
 
@@ -101,6 +117,7 @@ getBagButton(){
 
 		       if (inCart){
 			
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 			  } button.addEventListener("click" , (event) => {
 
@@ -112,14 +129,26 @@ getBagButton(){
 				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
 				//Save to the cart
 				
+<<<<<<< HEAD
+				cart  = [...cart ,cartItem];
+=======
 				cart  = [...cart , cartItem];
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
+<<<<<<< HEAD
 				
 
+=======
+<<<<<<< HEAD
+				
+=======
+				debugger;
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 				this.cartValues(cart);
 
 
@@ -129,6 +158,13 @@ getBagButton(){
 				//show cart
 				this.showCart();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 			     });
 	
 			});
@@ -146,6 +182,7 @@ getBagButton(){
 
                 	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
                 	cartItems.innerText = itemTotal;
+<<<<<<< HEAD
                 }
                 
                 	
@@ -153,6 +190,49 @@ getBagButton(){
 
                 		let div = document.createElement("div");
                 		div.classList.add("cart-item");
+=======
+                	console.log(cartTotal ,  cartItems)
+                	
+                
+
+
+<<<<<<< HEAD
+                }
+=======
+=======
+			
+>>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
+
+				// Show cart
+
+
+
+
+			     });
+	
+			});
+
+         }  
+            
+
+         cartValues(cart){
+         	debugger;
+
+         	let cartItemTotal = 0;
+         	let itemTotal = 0;
+         	debugger;
+         	cart.map(item => {
+         		cartItemTotal += item.field.price * item.quantity;
+         		itemTotal += item.quantity; 
+
+         	})
+
+         	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2))
+         	cartItems.innerText = itemTotal
+         	debugger;
+         	console.log(cartTotal , itemTotal)
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 
                 		div.innerHTML = ` 
 
@@ -169,18 +249,35 @@ getBagButton(){
   			        <i class="fa fa-chevron-down" ${item.sys.id}></i>
   			        </div> 
 
+<<<<<<< HEAD
   			        `
   			        cartContent.appendChild(div);
+=======
+}
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 
   			  }
 
 
   			  showCart(){
 
+<<<<<<< HEAD
   			  	cartDOM.classList.add("showCart");
   			  	cartOverlay.classList.add("transparentBcg");
   			  }
 
+=======
+<<<<<<< HEAD
+        
+=======
+
+         }
+=======
+>>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
+>>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
+>>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
+>>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
+>>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 
 
 
