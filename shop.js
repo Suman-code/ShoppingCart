@@ -1,4 +1,4 @@
-const button = document.querySelector(".cart-btn");
+const cartBtn = document.querySelector(".cart-btn");
 const cartItems = document.querySelector(".cart-items");
 const cartClose = document.querySelector(".close-cart");
 const removeItem = document.querySelector(".remove-item");
@@ -8,7 +8,7 @@ const clearCart = document.querySelector(".clear-cart");
 const cartTotal = document.querySelector(".cart-total");
 const products = document.querySelector(".products");
 const productsDOM = document.querySelector(".products-center");
-const cartContent = document.querySelector(".cart-cotent");
+const cartContent = document.querySelector(".cart-content");
 
 
 
@@ -124,8 +124,10 @@ getBagButton(){
 
 
 				//Display cart
+				this.displayCart(cartItem);
 
 				//show cart
+				this.showCart();
 
 			     });
 	
@@ -144,10 +146,43 @@ getBagButton(){
 
                 	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
                 	cartItems.innerText = itemTotal;
+                }
                 
                 	
-                
-          }
+                	displayCart(item){
+
+                		let div = document.createElement("div");
+                		div.classList.add("cart-item");
+
+                		div.innerHTML = ` 
+
+                	<img src=${item.field.image}>
+  			       <div>
+  				   <h4>${item.field.title}</h4>
+  				   <h5>$${item.field.price}</h5>
+  				   <span class="remove-item" data-id=${item.sys.id}>remove</span>
+  			       </div>
+  			        <div> 
+
+  			        <i class="fa fa-chevron-up" ${item.sys.id}></i>
+  			        <p class="item-amount" >${item.quantity}</p>
+  			        <i class="fa fa-chevron-down" ${item.sys.id}></i>
+  			        </div> 
+
+  			        `
+  			        cartContent.appendChild(div);
+
+  			  }
+
+
+  			  showCart(){
+
+  			  	cartDOM.classList.add("showCart");
+  			  	cartOverlay.classList.add("transparentBcg");
+  			  }
+
+
+
 
   }
 
