@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-  
-=======
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
 const cartBtn = document.querySelector(".cart-btn");
 const cartItems = document.querySelector(".cart-items");
 const cartClose = document.querySelector(".close-cart");
@@ -80,44 +76,15 @@ displayProducts(products) {
        });
 	
 	      productsDOM.innerHTML = output;
-<<<<<<< HEAD
-=======
-
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 
 	}
 
 
           getBagButton(){
-<<<<<<< HEAD
 
-	       let buttons = [...document.querySelectorAll(".bag-btn")];
-	    
-=======
 
 	      let buttons = [...document.querySelectorAll(".bag-btn")];
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-	           cart = JSON.parse(localStorage.getItem ("products"));    
-
-	           buttonsDOM = buttons;    
-
-<<<<<<< HEAD
-	           buttons.forEach(button => {
-		       let id =  button.dataset.id;
-
-		       let  inCart = cart.find(item => item.sys.id === id);
-
-		       if (inCart){
-=======
-=======
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 	           buttonsDOM = buttons;
 
 
@@ -149,22 +116,7 @@ displayProducts(products) {
 				Storage.saveCart(cart);
 
 				//set up the value
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-				
 
-=======
-<<<<<<< HEAD
-				
-=======
-				debugger;
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 				this.cartValues(cart);
 
 
@@ -174,19 +126,6 @@ displayProducts(products) {
 				//show cart
 				this.showCart();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 			     });
 	
 			   });
@@ -205,32 +144,13 @@ displayProducts(products) {
 
                 	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
                 	cartItems.innerText = itemTotal;
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-                }
-=======
-<<<<<<< HEAD
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
                 }
 
                 
                 
                 	//Display cart
-                	displayCart(item){
-
-                		let div = document.createElement("div");
-                		div.classList.add("cart-item");
-<<<<<<< HEAD
-=======
-=======
-                	console.log(cartTotal ,  cartItems)
-                	
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
-                
-                	
+               
                 	displayCart(item){
 
                 		let div = document.createElement("div");
@@ -266,8 +186,6 @@ displayProducts(products) {
   			  	this.cartValues(cart);
   			  	this.addDisplayCart(cart);
 
-  			  	
-
   			  }
 
   			  // Displying & hide cart by cliking button
@@ -276,7 +194,6 @@ displayProducts(products) {
   			  	cart.forEach(item => this.displayCart(item));
   			  	cartBtn.addEventListener("click" , () => {
 
-<<<<<<< HEAD
   			  		cartDOM.classList.add("showCart");
   			  	cartOverlay.classList.add("transparentBcg");
   			  	})
@@ -295,158 +212,10 @@ displayProducts(products) {
   			  	clearCart.addEventListener("click" , () => {
   			  		this.clearTheCart();
   			
-
   			  	});
-
   			  
-  			  	// Renove Single Iteam
+  			  	// cart functionality , removing item
 
-  			  		cartContent.addEventListener("click" , event => {
-
-  			  			if (event.target.classList.contains("remove-item")){
-
-  			  				let remoItem  = event.target;
-
-  			  				let id = remoItem.dataset.id;
-  			  				cartContent.removeChild(remoItem.parentElement.parentElement);
-  			  				this.removeItem(id);
- 
-=======
-         	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2))
-         	cartItems.innerText = itemTotal
-         	debugger;
-         	console.log(cartTotal , itemTotal)
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
-
-                		div.innerHTML = ` 
-                	<img src=${item.field.image}>
-  			       <div>
-  				   <h4>${item.field.title}</h4>
-  				   <h5>$${item.field.price}</h5>
-  				   <span class="remove-item" data-id=${item.sys.id}>remove</span>
-  			       </div>
-  			        <div> 
-  			        <i class="fa fa-chevron-up" ${item.sys.id}></i>
-  			        <p class="item-amount" >${item.quantity}</p>
-  			        <i class="fa fa-chevron-down" ${item.sys.id}></i>
-  			        </div> 
-  			        `
-  			        cartContent.appendChild(div);
-<<<<<<< HEAD
-               }
-=======
-=======
-}
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
-
-
-  			  showCart(){
-  			  	cartDOM.classList.add("showCart");
-  			  	cartOverlay.classList.add("transparentBcg");
-  			  }
-
-<<<<<<< HEAD
-  			  // Logit for clear  cart , remove items
-
-  			  cartAPP(){
-  			  	cart = Storage.checkCart();
-  			  	this.cartValues(cart);
-  			  	this.addDisplayCart(cart);
-=======
-  			  			}
-
-<<<<<<< HEAD
-  			  			else  if (
-  			  				event.target.classList.contains("fa-chevron-up")){
-
-  			  				let amoutUp = event.target;
-  			  			    let id = amoutUp.dataset.id;
-
-  			  			    let temItem = cart.find(item => item.id === id);
-  			  			    temItem.quantity = temItem.quantity + 1;
-  			  			    Storage.saveCart(cart);
-  			  			    this.cartValues(cart);
-  			  			    amoutUp.nextElementSibling.innerText = temItem.quantity;
-=======
-  			  showCart(){
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
-
-  			    }
-
-  			  // Displying & hide cart by cliking button
-
-  			  addDisplayCart(cart){
-  			  	cart.forEach(item => this.displayCart(item));
-  			  	cartBtn.addEventListener("click" , () => {
-
-  			  		cartDOM.classList.add("showCart");
-  			  	cartOverlay.classList.add("transparentBcg");
-  			  	});
-  			 
-  			  	cartClose.addEventListener("click" , () => {
-  			  		cartDOM.classList.remove("showCart")
-  			  	cartOverlay.classList.remove("transparentBcg")
-
-  			  });
-
-  			  }
-
-  			  //Clear  Total cart
-
-<<<<<<< HEAD
-  			  cartLogic(){
-            debugger;
-  			  	clearCart.addEventListener("click" , () => {
-              debugger;
-  			  		this.clearTheCart();
-  			
-  			  	});
-=======
-         }
-=======
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
->>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
-
-  			  			}
-  			  			else  if (
-  			  				event.target.classList.contains("fa-chevron-down")){
-  			  			let amoutDown = event.target;
-  			  			let  id = amoutDown.dataset.id;
-  			  			let temItem = cart.find(item => item.id === id);
-  			  			temItem.quantity = temItem.quantity - 1;
-
-  			  			if (temItem.quantity > 0){
-  			  				Storage.saveCart(cart);
-  			  				this.cartValues(cart);
-  			  				amoutDown.previousElementSibling.innerText = temItem.quantity;
-
-
-  			  			} 
-  			  			 else{
-  			  			 	cartContent.removeChild(amoutDown.parentElement.parentElement);
-  			  			 	this.removeItem(id);
-  			  			 	;
-  			  			 }
-
-
-  			  			}
-
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
-
-  			  		});
-  			  
-
-  			  
-  			  	// cab functionality , removing item
-
-<<<<<<< HEAD
   			  		cartContent.addEventListener("click" , event => {
 
   			  			if (event.target.classList.contains("remove-item")){
@@ -494,15 +263,11 @@ displayProducts(products) {
 
   			  		});
   			  }
-=======
-<<<<<<< HEAD
-  			  
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
+
 
   			  clearTheCart(){
   			  	let cartItem = cart.map(item => item.sys.id);
   			  	
-<<<<<<< HEAD
   			  	cartItem.forEach(id => this.removeItem(id));
 
   			  	while(cartContent.children.length > 0){
@@ -510,62 +275,27 @@ displayProducts(products) {
   			  		cartContent.removeChild(cartContent.children[0]);
 
   			  	}
-  			  
-}
-
-  			  removeItem(id){
-  			  	cart =  cart.filter(item => item.id !== id);
-  			  	this.cartValues(cart);
-  			  	Storage.saveCart(cart);
-  			  	let btn = this.singleButton(id);
-  			  	//btn.disabled  = false;
-  			  	//btn.innerHTML = `<i class = "fa fa-shopping-cart"></i> add to cart`;
           }
-
-  			  singleButton(id){
-  			  	return buttonsDOM.find(button => button.dataset.id === id); 
-          }
-
-        }
-=======
-  			  	cartItem.forEach(id => this.removeItem(id))
-  			  	while(cartContent.children.length > 0){
-
-  			  		cartContent.removeChild(cartContent.children[0]);
-  			  	}
-
-
-  			  }
-
+  			 
   			  removeItem(id){
   			  
   			  	cart =  cart.filter(item => item.sys.id !== id);
-
   			  	this.cartValues(cart);
   			  	Storage.saveCart(cart);
   			  	let button = this.singleButton(id);
   			  	button.disabled  = false;
   			  	button.innerHTML = `<i class = "fa fa-shopping-cart"></i> add to cart`;
-
-=======
-  }
->>>>>>> 165b158e3c6d168df18cd30d63eb71dec17bcbdb
-
-  			  	
-
   			  }
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 
   			  singleButton(id){
   
 
   			  	return buttonsDOM.find(button => button.dataset.id == id);
+          }
+        }
 
-  			  }
 
 
-
-}
 
 //local storage
 class Storage {
@@ -591,22 +321,13 @@ class Storage {
   }
 
   static checkCart(){
-<<<<<<< HEAD
 
   return localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : []; 
 
-
   }
-
-=======
-
-  return localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : []; 
+}
 
 
-  }
-
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
-} 
 //DOM function
 
 		document.addEventListener("DOMContentLoaded" , () => {
@@ -615,11 +336,9 @@ class Storage {
 
 		const ui = new UI();
 
-<<<<<<< HEAD
+
     // cart functionality
 
-=======
->>>>>>> 15f9386b2be64664c8bad93409c22eff9aa84d57
 		ui.cartAPP();
 
 
