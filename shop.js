@@ -49,9 +49,7 @@ class Products {
 		
 		}
 	}
-
 		
-
 //Class for display products
 
 class UI {
@@ -75,34 +73,17 @@ displayProducts(products) {
 				<h3>${product.field.title}</h3>
 				<h4>$${product.field.price}</h4>
 			</article> `;
-});
+       });
 	
-	productsDOM.innerHTML = output;
-
+	      productsDOM.innerHTML = output;
 
 	}
 
 
-getBagButton(){
+          getBagButton(){
 
-	let buttons = [...document.querySelectorAll(".bag-btn")];
-
-<<<<<<< HEAD
-=======
-	           cart = JSON.parse(localStorage.getItem ("products"));    
-
-	           buttonsDOM = buttons;    
-
-<<<<<<< HEAD
-	           buttons.forEach(button => {
-		       let id =  button.dataset.id;
-
-		       let  inCart = cart.find(item => item.sys.id === id);
-
-		       if (inCart){
-=======
-=======
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
+	       let buttons = [...document.querySelectorAll(".bag-btn")];
+	    
 	           buttonsDOM = buttons;
 
 
@@ -117,7 +98,6 @@ getBagButton(){
 
 		       if (inCart){
 			
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 			  } button.addEventListener("click" , (event) => {
 
@@ -128,27 +108,13 @@ getBagButton(){
 
 				let cartItem = {...Storage.getCartProducts(id), quantity : 1};
 				//Save to the cart
-				
-<<<<<<< HEAD
+			
 				cart  = [...cart ,cartItem];
-=======
-				cart  = [...cart , cartItem];
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
 
 				//Save cart to local storage
 				Storage.saveCart(cart);
 
 				//set up the value
-<<<<<<< HEAD
-				
-
-=======
-<<<<<<< HEAD
-				
-=======
-				debugger;
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 				this.cartValues(cart);
 
 
@@ -158,18 +124,12 @@ getBagButton(){
 				//show cart
 				this.showCart();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 			     });
 	
-			});
+			   });
 
-         }  
+      }  
+          // set up cart value
                 cartValues(cart){
                 	let  cartItemTotal= 0;
                 	let itemTotal = 0;
@@ -182,60 +142,18 @@ getBagButton(){
 
                 	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2));
                 	cartItems.innerText = itemTotal;
-<<<<<<< HEAD
+
                 }
+
                 
-                	
+                
+                	//Display cart
                 	displayCart(item){
 
                 		let div = document.createElement("div");
                 		div.classList.add("cart-item");
-=======
-                	console.log(cartTotal ,  cartItems)
-                	
-                
-
-
-<<<<<<< HEAD
-                }
-=======
-=======
-			
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
-
-				// Show cart
-
-
-
-
-			     });
-	
-			});
-
-         }  
-            
-
-         cartValues(cart){
-         	debugger;
-
-         	let cartItemTotal = 0;
-         	let itemTotal = 0;
-         	debugger;
-         	cart.map(item => {
-         		cartItemTotal += item.field.price * item.quantity;
-         		itemTotal += item.quantity; 
-
-         	})
-
-         	cartTotal.innerText = parseFloat(cartItemTotal.toFixed(2))
-         	cartItems.innerText = itemTotal
-         	debugger;
-         	console.log(cartTotal , itemTotal)
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
 
                 		div.innerHTML = ` 
-
                 	<img src=${item.field.image}>
   			       <div>
   				   <h4>${item.field.title}</h4>
@@ -243,45 +161,136 @@ getBagButton(){
   				   <span class="remove-item" data-id=${item.sys.id}>remove</span>
   			       </div>
   			        <div> 
-
   			        <i class="fa fa-chevron-up" ${item.sys.id}></i>
   			        <p class="item-amount" >${item.quantity}</p>
   			        <i class="fa fa-chevron-down" ${item.sys.id}></i>
   			        </div> 
-
-<<<<<<< HEAD
   			        `
   			        cartContent.appendChild(div);
-=======
-}
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
-
-  			  }
+               }
 
 
   			  showCart(){
-
-<<<<<<< HEAD
   			  	cartDOM.classList.add("showCart");
   			  	cartOverlay.classList.add("transparentBcg");
   			  }
 
-=======
-<<<<<<< HEAD
-        
-=======
+  			  // Logit for clear  cart , remove items
 
-         }
-=======
->>>>>>> 08de2c457b094d4d9056712c557c96cadec6e1e5
->>>>>>> fd8044ec41c232e16d09decfadec1b86db750c1e
->>>>>>> 8cfab11b9836f2f4856631a02b8706884db7f4a9
->>>>>>> ecf5e57e43577205bc20224a43fb0a378499998c
->>>>>>> 9185789b412988a591d25a94d98916828f6b72d4
+  			  cartAPP(){
+  			  	cart = Storage.checkCart();
+  			  	this.cartValues(cart);
+  			  	this.addDisplayCart(cart);
+
+  			    }
+
+  			  // Displying & hide cart by cliking button
+
+  			  addDisplayCart(cart){
+  			  	cart.forEach(item => this.displayCart(item));
+  			  	cartBtn.addEventListener("click" , () => {
+
+  			  		cartDOM.classList.add("showCart");
+  			  	cartOverlay.classList.add("transparentBcg");
+  			  	});
+  			 
+  			  	cartClose.addEventListener("click" , () => {
+  			  		cartDOM.classList.remove("showCart")
+  			  	cartOverlay.classList.remove("transparentBcg")
+
+  			  });
+
+  			  }
+
+  			  //Clear  Total cart
+
+  			  cartLogic(){
+            debugger;
+  			  	clearCart.addEventListener("click" , () => {
+              debugger;
+  			  		this.clearTheCart();
+  			
+  			  	});
 
 
+  			  
+  			  	// cab functionality , removing item
 
-  }
+  			  		cartContent.addEventListener("click" , event => {
+
+  			  			if (event.target.classList.contains("remove-item")){
+
+  			  				let removeItem  = event.target;
+
+  			  				let id = removeItem.dataset.id;
+
+  			  				cartContent.removeChild(removeItem.parentElement.parentElement);
+
+  			  				this.removeItem(id);
+                
+                 } else if 
+                  (event.target.classList.contains("fa-chevron-up")){
+                  let amountUp = event.target;
+                   let  id = amountUp.dataset.id;
+                   let tempItem = cart.find(item => item.id === id);
+                 
+                    tempItem.quantity = tempItem.quantity +1;
+                    Storage.saveCart(cart);
+                    this.cartValues(cart);
+                    amountUp.nextElementSibling.innerText = tempItem.quantity;
+                  }
+
+                   else  if (
+  			  				event.target.classList.contains("fa-chevron-down")){
+  			  			   let amountDown = event.target;
+  			  			   let  id = amountDown.dataset.id;
+  			  			   let temItem = cart.find(item => item.id === id);
+              
+  			  			    temItem.quantity = temItem.quantity -1;
+                  
+  			  			   if (temItem.quantity > 0){
+  			  				 Storage.saveCart(cart);
+  			  				 this.cartValues(cart);
+  			  				  amountDown.previousElementSibling.innerText = temItem.quantity;
+  			  			 } 
+                 
+  			  			  else{
+  			  			 	cartContent.removeChild(amountDown.parentElement.parentElement);
+  			  			 	this.removeItem(id);
+  			  		
+  			  			 }
+                }
+
+  			  		});
+  			  }
+
+  			  clearTheCart(){
+  			  	let cartItem = cart.map(item => item.sys.id);
+  			  	
+  			  	cartItem.forEach(id => this.removeItem(id));
+
+  			  	while(cartContent.children.length > 0){
+
+  			  		cartContent.removeChild(cartContent.children[0]);
+
+  			  	}
+  			  
+}
+
+  			  removeItem(id){
+  			  	cart =  cart.filter(item => item.id !== id);
+  			  	this.cartValues(cart);
+  			  	Storage.saveCart(cart);
+  			  	let btn = this.singleButton(id);
+  			  	//btn.disabled  = false;
+  			  	//btn.innerHTML = `<i class = "fa fa-shopping-cart"></i> add to cart`;
+          }
+
+  			  singleButton(id){
+  			  	return buttonsDOM.find(button => button.dataset.id === id); 
+          }
+
+        }
 
 
 //local storage
@@ -307,9 +316,14 @@ class Storage {
 
   }
 
+  static checkCart(){
+
+  return localStorage.getItem("cart")? JSON.parse(localStorage.getItem("cart")) : []; 
+
+
+  }
+
 } 
-
-
 //DOM function
 
 		document.addEventListener("DOMContentLoaded" , () => {
@@ -318,17 +332,22 @@ class Storage {
 
 		const ui = new UI();
 
+    // cart functionality
+
+		ui.cartAPP();
+
 
 	    goods.getProducts().then (products => {
 
 	    	ui.displayProducts(products);
 
-	    	Storage.saveProducts(products);
+	     	Storage.saveProducts(products);
 
 
 	    }).then(() => {
 
 	    	ui.getBagButton();
+	    	ui.cartLogic();
 	    });
 
 });
